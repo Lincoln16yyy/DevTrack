@@ -1,0 +1,44 @@
+name: Funcionalidade com aprendizagem
+description: Propor uma tarefa pequena que ensine um conceito e entregue valor ao projeto
+title: "[FEATURE] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: Qual problema do usuário precisa ser resolvido?
+      placeholder: Explique o contexto e o comportamento esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceitação
+      description: Como verificaremos que a funcionalidade está correta?
+      placeholder: Liste resultados observáveis e verificáveis.
+    validations:
+      required: true
+  - type: textarea
+    id: learning
+    attributes:
+      label: Conceitos a aprender
+      description: Quais conceitos o agente deve ensinar antes da implementação?
+      placeholder: Ex.: API REST, validação, SQL, estado no React.
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Plano de testes
+      description: Quais comportamentos e casos de erro precisam ser verificados?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Fora do escopo
+      description: O que não será implementado nesta issue?
+    validations:
+      required: false
