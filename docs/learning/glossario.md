@@ -162,6 +162,40 @@
 **Regressão** — bug que volta a aparecer depois de uma mudança; o teste automatizado serve para impedir.
 **Pirâmide de testes** — estratégia de ter muitos testes rápidos de unidade, alguns de integração e poucos ponta a ponta.
 
+## Aula 9 — Frontend React (2026-11-06)
+
+**SPA (Single Page Application)** — aplicação que carrega uma página HTML e troca o conteúdo via JavaScript, sem recarregar tudo a cada navegação.
+**Vite** — ferramenta que cria o projeto, serve em desenvolvimento (`npm run dev`) e gera o build de produção (`npm run build`).
+**HMR (Hot Module Replacement)** — o servidor troca o módulo alterado sem recarregar a página inteira.
+**`npm run build`** — roda `tsc -b` (checagem de tipos) e `vite build` (gera `dist/`).
+**Componente** — função com inicial maiúscula que devolve JSX; usada como `<App />`.
+**JSX** — sintaxe parecida com HTML dentro do JavaScript/TypeScript.
+**`{}` no JSX** — interpola uma expressão JavaScript (variável, cálculo, `map`).
+**Props** — dados passados do componente pai para o filho; o filho só lê.
+**`ProjectListProps`** — tipo que descreve quais props o componente aceita.
+**`key`** — identificador único de cada item de uma lista; ajuda o React a saber o que mudou.
+**State** — dado guardado pelo React entre renderizações; alterar via setter dispara nova renderização.
+**`useState`** — hook que cria um state e devolve `[valor, setValor]`.
+**Setter (`setProjects`)** — substitui o valor do state e agenda uma nova renderização.
+**Renderização** — o React chamar o componente para produzir a nova árvore de elementos.
+**Virtual DOM / reconciliação** — comparação entre a árvore nova e a anterior para aplicar no DOM real só o que mudou.
+**`useEffect`** — hook que executa código depois da renderização (efeitos colaterais).
+**Array de dependências** — segundo argumento do `useEffect`: sem array roda sempre; `[]` roda uma vez; `[x]` roda quando `x` muda.
+**`StrictMode`** — modo de desenvolvimento que executa efeitos duas vezes para revelar efeitos mal escritos.
+**`fetch`** — API do navegador para fazer requisições HTTP; devolve uma `Promise`.
+**`async/await`** — forma de escrever código assíncrono que parece sequencial.
+**`response.ok`** — `true` para status 2xx.
+**`response.json()`** — lê o corpo da resposta e converte de JSON para objeto (assíncrono).
+**`try / catch / finally`** — trata erro e garante um bloco final que sempre roda.
+**Loading state** — booleano que indica que a requisição ainda está em andamento.
+**Error state** — mensagem guardada quando a requisição falha.
+**Renderização condicional** — retornar JSX diferente conforme o estado (`loading`, `error`, sucesso).
+**Origem (origin)** — protocolo + host + porta; `5173` e `8080` são origens diferentes.
+**CORS** — regra do navegador que bloqueia respostas de outra origem sem autorização explícita do servidor.
+**Proxy do Vite** — repassa requisições de `/api` para o backend durante o desenvolvimento.
+**Reverse proxy** — servidor (ex.: Nginx) que, em produção, encaminha `/api` para a API real.
+**Caminho relativo (`/api/projects`)** — usa a origem da página; funciona em dev e em produção.
+
 ## Ainda não ensinado
 
-Componente React, JSX, estado, `useEffect` e `fetch` no frontend; teste de integração com PostgreSQL real (Testcontainers); `ArgumentCaptor` e recursos avançados do Mockito; CI, autenticação e deploy. Entram no glossário quando chegarmos lá.
+Teste de integração com PostgreSQL real (Testcontainers); `ArgumentCaptor` e recursos avançados do Mockito; CI, autenticação e deploy; testes de componentes React; formulário de criação de projeto no frontend; validação de JSON em runtime com Zod; roteamento no frontend (React Router); estado global.
